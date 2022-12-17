@@ -8,16 +8,6 @@
      color: black;
  }
 
- a:link {
-     font-weight: bold;
-     color: cyan;
- }
-
- a:visted {
-     font-weight: bold;
-     color:fuchsia;
- }
-
  .img-center {
      width: 600px;
      display: block;
