@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Methods </title>
+        <link rel="stylesheet" href="resources/style.css">
+    </head>
+    <body>
+    <div class="header"> 
+        <br>
+        <h1 style="margin-left: 40px;"> Analyzing Recent Trends in the U.S. Real Estate Market </h1>
+        <h2 style="margin-left: 40px;"> DATA 211 Fall 2022 Final Project </h2>
+        <h3 style="margin-left: 40px;"> Sam Joyner</h3>
+    </div>
+
+    <div class="topnav">
+        <a> </a>
+        <a href="index.html">Home</a>
+        <a href="data.html">Data</a>
+        <a class="active" href="analysis.html">Methods</a>
+        <a href="results.html">Results</a>
+      </div>
+
+    <br><br>
+    
+    The preprocessing for this data was fairly minimal. I imported the .xls files from the Census Bureau into a notebook, making some minor formatting changes
+    to make the data suitable to work with.  For these preprocessing
+    steps I used Pandas to import the data and created dataframes to store the various datasets. 
+    I also had to manually create a CSV file that contains each state and its region, which was necessary to associate these fields. Additionally,
+    I removed Puerto Rico from the state geographic dataset, since it was not included in the Census Bureau data.
+    
+    <br><br>
+
+    With the datasets prepared, the first step of my analysis was to prepare line plots showing each of the three variables, by region, over the entire timespan with
+    MatPlotLib. This produced the following plots: 
+
+    <br><br>
+
+    <img src="resources/visuals/House_Prices_1973_2021.jpg" class="img-center">
+
+    <br><br>
+
+    <img src="resources/visuals/House_Sales_1973_2021.jpg" class="img-center">
+
+    <br><br>
+
+    <img src="resources/visuals/House_Listings_1973_2021.jpg" class="img-center">
+
+    <br><br>
+
+    These plots immediately reveal some trends, which will be discussed in the results. These plots will be used in their entirety to show overall change,
+    but I was also cut them to specific time frames to address some questions.
+    
+    <br><br>
+
+    My next step in the analysis was to
+    add a geographic element to the visualization to be able to better highlight the values and disparities between regions.
+    To do this I created a generic method to plot any one of the variables for a given year on a map of the United States.
+    Below is an example of this output, showing the median sale price of homes in each region in 1980:
+
+    <br><br>
+
+    <embed src="resources/visuals/Median_1980.html" class="img-center" style="width: 60%; min-height: 450px;">
+
+    <br><br>
+
+    Notice too that while all regions appear similar, hovering over a state pulls up a tooltip to show a states name,
+    region, and the value being shown, in this case the median sale price for the region. I opted to leave the legend 
+    on the display as well so that a viewer could get a general idea of the values at a glance, and then use the tooltips
+    to see specific values if desired. Another example of this 
+    method is the following that shows the number of houses listed at the end of 2000:
+
+    <br><br>
+
+    <embed src="resources/visuals/Listed_2000.html" class="img-center" style="width: 60%; min-height: 450px;">
+
+    <br><br>
+
+    This method can also show a similar display as above, but for sold homes as well. These visuals can be generated
+    for any year in the 1973 to 2021 range and for any of the three statistics, and they do a good job highlighting
+    the disparity between regions for a given year, however the do not particularly highlight any year-to-year change. I will
+    use these to highlight certain years of interest when answering the questions.
+
+    <br><br>
+
+    To get a better geographic visual of the yearly change, I then slightly modified the method above to still take in a given 
+    statistic, but instead of taking one year take in two years and displays the percent change between the two. Once
+    again a tooltip allows for viewing the exact percent change, as well as the two individual variable values. The map 
+    below shows this style of map for the change in median list price from 1980 to 1990:
+
+    <br><br>
+
+    <embed src="resources/visuals/Median_1980_1990.html" class="img-center" style="width: 60%; min-height: 450px;">
+
+    <br><br>
+
+    Displaying that this method can be used for the other variables, the map below shows percent change between the number
+    of houses sold from 2010 to 2020:
+
+    <br><br>
+
+    <embed src="resources/visuals/Sold_2010_2020.html" class="img-center" style="width: 60%; min-height: 450px;">
+
+    <br><br>
+
+    I will use this style of map to show disparities in regional changes over a specified time period.
+
+    <br><br>
+
+    With this analysis I have created generalized plots and methods that I can use to highlight specific time periods to 
+    answer my research questions, and show trends and changes in the U.S. new build real estate market. 
+    I considered, and partially developed, several other additions to the analysis as well. I considered an interactive map that had 
+    a slider widget for the year, although this frequently lagged and was not usable outside of a Python notebook. I also consider an animation 
+    that would iterate through a variable's maps by year, however I thought that this could be difficult for the viewer to follow along with, 
+    and decided that highlighting individual maps as developed above would be easy for the viewer. I also tried to create
+    a layered map that would contain all three statistics on one map for a given year or change over a span of years, 
+    but due to limitations with Folium the maps were cluttered with unneccessary legends and the layers did not overlay well,
+    and thus I decided to keep the maps separate.
+
+    <br><br>
+
+    </body>
+</html>

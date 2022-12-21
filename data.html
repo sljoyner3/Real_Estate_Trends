@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Data </title>
+        <link rel="stylesheet" href="resources/style.css">
+    </head>
+    <body>
+    <div class="header"> 
+        <br>
+        <h1 style="margin-left: 40px;"> Analyzing Recent Trends in the U.S. Real Estate Market </h1>
+        <h2 style="margin-left: 40px;"> DATA 211 Fall 2022 Final Project </h2>
+        <h3 style="margin-left: 40px;"> Sam Joyner</h3>
+    </div>
+
+    <div class="topnav">
+        <a> </a>
+        <a href="index.html">Home</a>
+        <a class="active" href="data.html">Data</a>
+        <a href="analysis.html">Methods</a>
+        <a href="results.html">Results</a>
+      </div>
+
+    <br><br>
+    
+    The data for this project is from the <a href="https://www.census.gov/construction/nrs/historical_data/index.html"> 
+        U.S. Census Bureau</a>, and the available datasets include number of houses sold, number of houses for sale, and mean 
+        and median sale prices. This data pertains only to newly built single-family homes, and 
+        not existing ones or new multifamily homes, however, metrics relating to the new build 
+        segment of the real estate market can still be used to make inferences about the market as a whole. New home sale prices often 
+        vary up and down with existing home sale prices, and increased listings and sales of new homes can indicate the strength of the
+        entire market since it still reflects individuals' overall ability and willingness to purchase homes in the given economic climate, 
+        as well as developers' confidence that homes will be bought.  The data generally goes back to the 1960s or 1970s depending on the statistic, and 
+        the exact temporal scope of the project is part of the discussion below.
+        Another consideration with this data source is that the information is not very granular and comes divided into only four
+        regions for the entire country - Northeast, South, Midwest, West - as seen below:
+
+    <br><br>
+
+    <embed src="resources/visuals/Regions_Map.html" class="img-center" style="width: 60%; min-height: 450px;">
+
+    <br><br>
+
+    While clustering the U.S. into just four groups is not ideal, I checked many sources for viable datasets including, but not limited to,
+    U.S. Government pages like
+    the Census Bureau and Department of Housing and Urban Development and private real estate websites including Realtor.com,
+    Zillow, Redfin, and the National Association of Realtors. However, the selected Census Bureau dataset was the only one that
+    went back a significant number of decades and would allow me to evaluate change over a significant period of time. Many of the 
+    other available datasets separated the data by states but only went back to the mid-2010s, and I decided that it was more beneficial
+    to use the data with a greater range of years so that I would have a significant timeframe to study.
+
+    <br><br>
+
+    With the data source selected, I choose three metrics from the Census Bureau datasets to visualize: median new home sale price, number of new homes sold
+    in a given year, and number of houses listed for sale at the end of a given year. The data is organized by the four regions 
+    discussed above, as well as values for the U.S. as a whole. The pricing and sales data is available on yearly increments going back to
+    1963 and up until 2021, however, the listing data is only 
+    available broken down by region from 1973 to 2021. Thus, to keep a consistent timeframe from analysis I will consider the scope
+    of the project to be 1973 to 2021, and I will evaluate the changes and trends over this period, which includes the three main events 
+    named in the research questions. These three datasets were chosen since they are easy to interpret and visualize across the 
+    United States, and because they are clear indicators of the overall real estate market. Notably, I chose median new home sale prices over mean new home sale
+    prices  
+    since median sales are protected against outliers, which can be an issue when working with housing data where there may be a few very
+    expensive homes that skew the mean significantly. It is also important to specify that the median sales
+    price is the median sale price of homes in that region for the given year, the number of homes sold is the total number of all homes 
+    in the region that were sold in the given year, but the number of houses listed is the number of homes that were on the market at
+    the end of a given year, not the number that were listed at any point during the year. This is an important clarification regarding
+    the interpretation of the listed homes dataset.
+
+    <br><br>
+    For the geographic visualizations I needed a .json file of all the states, and for this I used the dataset that we used in class when working with Folium, as 
+    this was straightforward and contained all of the geographic information that I needed.
+    <br><br>
+    </body>
+</html>
